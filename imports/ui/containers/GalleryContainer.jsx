@@ -1,5 +1,5 @@
-import React from 'react'
-var Masonry = require('react-masonry-component');
+import React from 'react';
+import Masonry from 'react-masonry-component';
 
 var masonryOptions = {
     transitionDuration: 2,
@@ -75,4 +75,4 @@ var Gallery = React.createClass({
     }
 });
 
-module.exports = Gallery;
+export default Gallery;
