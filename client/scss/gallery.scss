@@ -1,0 +1,41 @@
+// COLORS
+$gray1: #E5E5E5;
+$gray2: #5D5D5D;
+
+.gallery-img {
+  img {
+    display:block;
+    max-width:100%;
+    height:auto;
+    width:100%;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+  }
+}
+
+.gallery-container{
+  position: relative;
+}
+
+.gallery-item {
+  margin-bottom: 5px;
+  background-color: #FFF;
+
+  box-shadow:  2px 2px 3px 0 hsla(205,5%,48%,.12);
+  -moz-box-shadow:  2px 2px 3px 0 hsla(205,5%,48%,.12);
+  -webkit-box-shadow:  2px 2px 3px 0 hsla(205,5%,48%,.12);
+  -webkit-transition: box-shadow 200ms ease-in;
+  -moz-transition: box-shadow 200ms ease-in;
+  -o-transition: box-shadow 200ms ease-in;
+  transition: box-shadow 200ms ease-in;
+  border: 1px solid #E2E2E2;
+}
+
+.stars {
+  border-radius: 2px;
+  border: 1px solid #E2E2E2;
+  background-color: $gray1;
+  margin: 5px;
+}
