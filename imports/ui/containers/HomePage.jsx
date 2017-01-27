@@ -1,16 +1,25 @@
-import React, { Component } from 'react';
-import Gallery from './GalleryContainer';
+import React from 'react';
+import { createContainer } from 'meteor/react-meteor-data';
 
-class HomePage extends Component {
-  render () {
-    return (
-      <div className="container">
-        <div className="row">
-            <Gallery />
-          </div>
+// MongoDB collection
+import { Pins } from '../../api/pins';
+
+import Gallery from '../components/Gallery';
+
+const HomePage = (props) => {
+  return (
+    <div className="container">
+      <div className="row">
+        <Gallery items={props.pins}/>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
-export default HomePage;
+export default createContainer(() => {
+  Meteor.subscribe('pins');
+
+  return {
+    pins: Pins.find().fetch(),
+  };
+}, HomePage);
