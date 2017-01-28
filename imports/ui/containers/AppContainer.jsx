@@ -13,8 +13,8 @@ const App = (props) => (
   </div>
 );
 
-export default AppContainer = createContainer((props) => {
-  // props here will have `main`, passed from the router
+export default createContainer((props) => {
+  // props here will have `page`, passed from the router
   // anything we return from this function will be *added* to it
   return {
     // user: Meteor,
