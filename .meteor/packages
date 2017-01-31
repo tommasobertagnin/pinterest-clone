@@ -23,3 +23,5 @@ react-meteor-data
 kadira:flow-router
 accounts-ui
 accounts-twitter
+check
+twbs:bootstrap

@@ -8,5 +8,13 @@ if (Meteor.isServer) {
   })
 }
 
-// TODO: add methods to create delete pins
-Meteor.methods();
+Meteor.methods({
+  'createPin': function(doc){
+    check(doc.userId, String);
+    check(doc.src, String);
+    check(doc.description, String);
+    if(Meteor.userId() && (doc.userId === Meteor.userId())){
+      Pins.insert(doc);
+    }
+  }
+});

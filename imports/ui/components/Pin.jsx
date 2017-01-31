@@ -20,8 +20,9 @@ const Pin = (props) => {
 };
 
 Pin.propTypes = {
+  userId: PropTypes.string.isRequired,
   src: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired
 };
 
 export default Pin;
