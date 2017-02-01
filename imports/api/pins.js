@@ -17,8 +17,6 @@ Meteor.methods({
     check(doc.src, String);
     check(doc.description, String);
 
-    console.log(Meteor.user());
-
     if(Meteor.user().services){
       doc.userId = Meteor.user().services.twitter.id;
       doc.avatar = Meteor.user().services.twitter.profile_image_url;
