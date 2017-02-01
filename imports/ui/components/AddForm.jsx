@@ -7,9 +7,7 @@ export default class AddForm extends Component {
         event.preventDefault();
         let image = ReactDOM.findDOMNode(this.refs['pin-image-url']).value;
         let description = ReactDOM.findDOMNode(this.refs['pin-description']).value;
-        let userId = Meteor.userId();
         let doc = {
-            userId: userId,
             src: image,
             description: description
         };

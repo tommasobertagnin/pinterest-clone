@@ -11,7 +11,7 @@ const Pin = (props) => {
           <h4>{props.description}</h4>
         </div>
         <div className="row">
-          <div className="col-xs-6">Logo</div>
+          <div className="col-xs-6"><img src={props.avatar} /></div>
           <div className="col-xs-6"><div className="stars pull-right"># <i className="fa fa-star" aria-hidden="true"></i></div></div>
         </div>
       </div>
@@ -22,7 +22,8 @@ const Pin = (props) => {
 Pin.propTypes = {
   userId: PropTypes.string.isRequired,
   src: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired
+  description: PropTypes.string.isRequired,
+  avatar: PropTypes.string
 };
 
 export default Pin;

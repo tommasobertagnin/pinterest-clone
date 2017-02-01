@@ -5,7 +5,7 @@ import Pin from './Pin';
 
 const Gallery = (props) => {
   const items = props.items.map((item, i) => (
-    <Pin key={i} description={item.description} src={item.src} />
+    <Pin key={i} description={item.description} src={item.src} avatar={item.avatar} userId={item.userId} />
   ));
 
   return (
