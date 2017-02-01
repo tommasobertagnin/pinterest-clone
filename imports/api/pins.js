@@ -1,6 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 
-export const Pins = new Mongo.Collection('pins3');
+export const Pins = new Mongo.Collection('pins');
 
 if (Meteor.isServer) {
   Meteor.publish('pins', function pinsPublication () {
