@@ -4,9 +4,28 @@ export const Pins = new Mongo.Collection('pins');
 
 if (Meteor.isServer) {
   Meteor.publish('pins', function pinsPublication () {
-    return Pins.find({}, { limit: 20 });
-  })
+    return Pins.find({}, { limit: 20, sort: {createdAt: -1}});
+  });
 }
 
-// TODO: add methods to create delete pins
-Meteor.methods();
+Pins.allow({
+  insert: function() { return true }
+});
+
+Meteor.methods({
+  'createPin': function(doc){
+    check(doc.src, String);
+    check(doc.description, String);
+
+    if(Meteor.user().services){
+      doc.userId = Meteor.user().services.twitter.id;
+      doc.avatar = Meteor.user().services.twitter.profile_image_url;
+    }
+    doc.createdAt = Date.now();
+
+    check(doc.userId, String);
+    check(doc.avatar, String);
+
+    Pins.insert(doc);
+  }
+});

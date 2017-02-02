@@ -18,8 +18,7 @@ const HomePage = (props) => {
 
 export default createContainer(() => {
   Meteor.subscribe('pins');
-
   return {
-    pins: Pins.find().fetch(),
+    pins: Pins.find({}, {sort: {createdAt: -1}}).fetch()
   };
 }, HomePage);
